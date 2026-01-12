@@ -1,0 +1,241 @@
+:root {
+  --uber-black: #000000;
+  --uber-white: #FFFFFF;
+  --uber-grey-100: #F6F6F6;
+  --uber-grey-200: #E8E8E8;
+  --uber-grey-300: #AFAFAF;
+  --uber-grey-500: #545454;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background-color: var(--uber-white);
+  color: var(--uber-black);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  height: 64px;
+  background-color: var(--uber-black);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  flex-shrink: 0;
+  border-bottom: 1px solid #333;
+  /* Very subtle border as requested */
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0 64px;
+  }
+}
+
+.logo {
+  color: var(--uber-white);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.logo b {
+  font-weight: 700;
+}
+
+.login-card-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* Standard Uber top-padding layout */
+  padding: 64px 20px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  line-height: 1.25;
+  color: #000;
+}
+
+@media (max-width: 480px) {
+  .login-title {
+    font-size: 18px;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-field {
+  width: 100%;
+  height: 52px;
+  background-color: #F6F6F6;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0 16px;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+/* ... rest of the file ... */
+
+.input-field::placeholder {
+  color: #6B6B6B;
+}
+
+.input-field:focus {
+  background-color: #E8E8E8;
+  border-color: transparent;
+}
+
+.login-button {
+  width: 100%;
+  height: 54px;
+  background-color: var(--uber-black);
+  color: var(--uber-white);
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.login-button:hover {
+  opacity: 0.85;
+}
+
+.login-button:disabled {
+  background-color: var(--uber-grey-300);
+  cursor: not-allowed;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 16px 0;
+  color: #6B6B6B;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #E8E8E8;
+}
+
+.divider span {
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.social-button {
+  width: 100%;
+  height: 54px;
+  background-color: #EEEEEE;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #000;
+  transition: background-color 0.2s;
+}
+
+.social-button:hover {
+  background-color: #E2E2E2;
+}
+
+.social-button img {
+  width: 18px;
+  height: 18px;
+}
+
+.processing-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--uber-grey-200);
+  border-top: 4px solid var(--uber-black);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.processing-text {
+  font-size: 18px;
+  color: var(--uber-black);
+  font-weight: 500;
+}
+
+.legal-text {
+  font-size: 12px;
+  color: var(--uber-grey-500);
+  line-height: 1.5;
+  margin-top: 24px;
+}
